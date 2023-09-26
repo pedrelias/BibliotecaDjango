@@ -36,7 +36,7 @@ class Livro(models.Model):
     nome = models.CharField(max_length=50)
     autor = models.ForeignKey(Autor, on_delete=models.CASCADE)
     editora = models.ForeignKey(Editora, on_delete=models.CASCADE)
-    genero = models.ForeignKey(Genero, on_delete=models.CASCADE)
+    genero = models.ManyToManyField(Genero)
     preco = models.FloatField()
     data_publicacao = models.DateField()
     def __str__(self):

@@ -57,7 +57,11 @@
            <td>{{Livro.nome}}</td>
            <td>{{Livro.autor}}</td>
            <td>{{Livro.editora}}</td>
-           <td>{{Livro.genero}}</td>
+           <td>
+            {% for genero in Livro.genero.all %}
+            {{ genero.nome }}{% if not forloop.last %}, {% endif %}
+            {% endfor %}
+           </td>
            <td>{{Livro.preco}}</td>
            <td>{{Livro.data_publicacao}}</td>
           </tbody>
